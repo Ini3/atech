@@ -1,19 +1,215 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #EAEAEA;
+    font-family: 'Bahnschrift', sans-serif;
+    background-color: #EAEAEA;
+    overflow: auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #C63939;
+    padding: 1rem 2rem;
+    z-index: 10;
+}
+
+.logo {
+    height: 40px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: bold;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding: 0 2rem;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: calc(100vh - 80px);  /*adjusts for header */
+    background-color: #C63939;
+}
+
+.hero-text {
+    max-width: 50%;
+    color: white;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin: 0;
+    line-height: 1.2;
     color: #1D4E33;
 }
 
-header {
-    background-color: #C63939;
+.hero-text h1 span {
     color: white;
-    padding: 1rem;
-    text-align: center;
 }
-nav a {
-    margin: 0 10px;
+
+.hero-text h3 {
+    margin-top: 2rem;
+    color: #1D4E33;
+    font-size: 1.5rem;
+}
+
+.hero-text p {
+    margin-top: 1rem;
     color: white;
-    text-decoration: none;
+    font-size: 1rem;
+}
+
+.hero-buttons {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.contact-btn {
+    background-color: white;
+    color: #C63939;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.lang-flags {
+    font-size: 1rem;
+    color: white;
+}
+
+.hero-image {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100%;
+}
+
+
+.portrait {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: calc(100vh - 100px); /* Leaves room for header */
+    z-index: 2;
+    object-fit: contain;
+}
+
+
+.signature {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 10rem;
+    font-family: 'FREESCPT', cursive;
+    font-size: 2rem;
+    color: white;
+    transform: rotate(-30deg);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.tree-bg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: calc(100vh - 100px); /* Match portrait height */
+    opacity: 0.5;
+    z-index: 1;
+    object-fit: contain;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        height: auto;               /* let it grow naturally */
+        padding: 2rem 1rem;
+      }
+
+    .hero-text {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .hero-image {
+        width: 100%;
+        position: relative;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin-top: 2rem;
+    }
+
+    .signature {
+        position: absolute;
+        bottom: 1.5rem;
+        right: 1rem;
+        font-family: 'FREESCPT', cursive;
+        font-size: 2rem;
+        color: white;
+        z-index: 2;
+        pointer-events: none;
+        transform: rotate(-30deg); /* ✅ Tilt upward */
+        transform-origin: right bottom;
+    }
+
+    .portrait {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        height: 50vh;                /* smaller image */
+        width: auto;
+        max-width: 90%;
+        z-index: 2;
+      }
+    
+    .tree-bg {
+        width: 100%;
+        position: relative;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        opacity: 0.4;
+        bottom: 0;
+        z-index: 1;
+    }
+}
+
+
+/* Light gray track and dark thumb */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #EAEAEA;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #C63939;
+    border-radius: 10px;
 }

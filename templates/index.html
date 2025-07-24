@@ -2,30 +2,50 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Kistiñe Azpiazu | Aprende Español y Euskera</title>
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kristiñe Azpiazu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        @font-face {
+            font-family: 'Bahnschrift';
+            src: url('{{ url_for('static', filename='fonts/Bahnschrift.ttf') }}');
+        }
+        @font-face {
+            font-family: 'FREESCPT';
+            src: url('{{ url_for('static', filename='fonts/FREESCPT.TTF') }}');
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>KRISTIÑE AZPIAZU</h1>
-        <nav>
-            <a href="#">Aprende Euskera</a>
-            <a href="#">Aprende Español</a>
-            <a href="#">Sobre mí</a>
-            <a href="#">Contacto</a>
-        </nav>
+    <header class="header">
+        <img src="{{ url_for('static', filename='img/logo_white.png') }}" alt="Logo" class="logo">
+        <a href="{{ url_for('euskera') }}">APRENDE EUSKERA</a>
+        <a href="{{ url_for('espanol') }}">APRENDE ESPAÑOL</a>
+        <a href="#">SOBRE MI</a>
+        <a href="#">CONTACTO</a>
     </header>
 
-    <main>
-        <section>
-            <h2>Aprende Español</h2>
-            <p>Lorem ipsum dolor sit amet...</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>Contacto: kristine@example.com</p>
-    </footer>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>{{ headline1 }}<br><span>{{ headline2 }}</span></h1>
+            <h3>{{ content_title }}</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            <div class="hero-buttons">
+                <button class="contact-btn">CONTACTO</button>
+                <!--<span class="lang-flags">🇪🇸 ESPAÑOL &nbsp; 🇪🇺 EUSKERA</span>-->
+                <p><span class="lang-flags">{{ lang_icon }} {{ lang_name }}</span></p>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img class="tree-bg" src="{{ url_for('static', filename=logo) }}" alt="Tree Logo">
+            <img class="portrait" src="{{ url_for('static', filename='img/kristine.png') }}" alt="Kristine Azpiazu">
+            <div class="signature">Kris. Azpiazu</div>
+        </div>        
+        
+    </section>
 </body>
 </html>
+
+
+
+
