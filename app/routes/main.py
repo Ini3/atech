@@ -1,8 +1,8 @@
-from flask import Flask, render_template
+from flask import Blueprint, render_template
 
-app = Flask(__name__)
+main = Blueprint('main', __name__)
 
-@app.route('/')
+@main.route('/')
 def euskera():
     return render_template('index.html', 
         language='euskera',
@@ -14,7 +14,7 @@ def euskera():
         lang_name='EUSKERA'
     )
 
-@app.route('/espanol')
+@main.route('/espanol')
 def espanol():
     return render_template('index.html', 
         language='espanol',
@@ -25,6 +25,3 @@ def espanol():
         lang_icon='🇪🇸',
         lang_name='ESPAÑOL'
     )
-
-if __name__ == '__main__':
-    app.run(debug=True)
