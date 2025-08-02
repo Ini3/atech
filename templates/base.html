@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Kistiñe Azpiazu{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+      @font-face {
+          font-family: 'Bahnschrift';
+          src: url('{{ url_for('static', filename='fonts/Bahnschrift.ttf') }}');
+      }
+      @font-face {
+          font-family: 'FREESCPT';
+          src: url('{{ url_for('static', filename='fonts/FREESCPT.TTF') }}');
+      }
+  </style>
+  {% block extra_css %}{% endblock %}
+</head>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true });
+</script>
+
+<body>
+  <header class="header">
+    <div class="logo-container">
+      <img src="{{ url_for('static', filename='img/logo_white.png') }}" alt="Logo" class="logo">
+    </div>
+    <nav class="nav-links">
+      <a href="{{ url_for('euskera') }}" class="{% if active_page == 'euskera' %}active{% endif %}">APRENDE EUSKERA</a>
+      <a href="{{ url_for('espanol') }}" class="{% if active_page == 'espanol' %}active{% endif %}">APRENDE ESPAÑOL</a>
+      <a href="{{ url_for('sobre_mi') }}" class="{% if active_page == 'sobre_mi' %}active{% endif %}">SOBRE MI</a>
+      <a href="{{ url_for('contacto') }}" class="{% if active_page == 'contacto' %}active{% endif %}">CONTACTO</a>
+      <a href="#" class="lang-toggle">{{ current_lang_icon }}</a>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

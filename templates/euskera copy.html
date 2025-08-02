@@ -17,16 +17,25 @@
 </head>
 <body>
     <header class="header">
-        <img src="{{ url_for('static', filename='img/logo_white.png') }}" alt="Logo" class="logo">
-        <a href="{{ url_for('euskera') }}">APRENDE EUSKERA</a>
-        <a href="{{ url_for('espanol') }}">APRENDE ESPAÑOL</a>
-        <a href="#">SOBRE MI</a>
-        <a href="#">CONTACTO</a>
+
+          <img src="{{ url_for('static', filename='img/logo_white.png') }}" alt="Logo" class="logo">
+      
+        <nav class="nav-links">
+          <a href="{{ url_for('euskera') }}" class="{% if language == 'euskera' %}active{% endif %}">APRENDE EUSKERA</a>
+          <a href="{{ url_for('espanol') }}" class="{% if language == 'espanol' %}active{% endif %}">APRENDE ESPAÑOL</a>
+          <a href="#">SOBRE MI</a>
+          <a href="#">CONTACTO</a>
+        </nav>
     </header>
 
     <section class="hero">
         <div class="hero-text">
             <h1>{{ headline1 }}<br><span>{{ headline2 }}</span></h1>
+            <!--<h1>
+                <span class="headline-line1">{{ headline1 }}</span><br>
+                <span class="headline-line2">{{ headline2 }}</span>
+            </h1>-->
+            
             <h3>{{ content_title }}</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
@@ -37,7 +46,7 @@
             </div>
         </div>
         <div class="hero-image">
-            <img class="tree-bg" src="{{ url_for('static', filename=logo) }}" alt="Tree Logo">
+            <img class="tree-bg" src="{{ url_for('static', filename='img/tree7.png') }}" alt="Tree Logo">
             <img class="portrait" src="{{ url_for('static', filename='img/kristine.png') }}" alt="Kristine Azpiazu">
             <div class="signature">Kris. Azpiazu</div>
         </div>        
