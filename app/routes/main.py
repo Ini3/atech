@@ -1,12 +1,16 @@
-from flask import Flask, render_template
+from flask import Blueprint, render_template
 
-app = Flask(__name__)
+main = Blueprint('main', __name__)
 
+<<<<<<< HEAD:app.py
 @app.route('/')
 def portada():
     return render_template('portada.html')
 
 @app.route('/euskera')
+=======
+@main.route('/')
+>>>>>>> fee1b2003d72065a2e162aa29aef015516352cb8:app/routes/main.py
 def euskera():
     return render_template('euskera.html',
         active_page='euskera',
@@ -15,7 +19,7 @@ def euskera():
         current_lang_icon='🇪🇸'
     )
 
-@app.route('/espanol')
+@main.route('/espanol')
 def espanol():
     return render_template('esp.html',
     active_page='espanol',
@@ -23,6 +27,7 @@ def espanol():
     lang_name='ESPANOL',
     current_lang_icon='🇪🇸'
     )
+<<<<<<< HEAD:app.py
 
 @app.route('/sobre-mi')
 def sobre_mi():
@@ -60,3 +65,5 @@ def contacto():
 
 if __name__ == '__main__':
     app.run(debug=True)
+=======
+>>>>>>> fee1b2003d72065a2e162aa29aef015516352cb8:app/routes/main.py
