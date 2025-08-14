@@ -24,11 +24,6 @@ def api_info():
         ]
     })
 
-# === Swagger UI Route (Static HTML pointing to OpenAPI spec) ===
-# Add this to app/routes/swagger.py if desired
-from flask import Blueprint, send_from_directory
-swagger = Blueprint('swagger', __name__, url_prefix='/docs')
-
 # --- Leads ---
 @api.route('/leads', methods=['GET'])
 def get_leads():

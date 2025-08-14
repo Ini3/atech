@@ -1,4 +1,3 @@
-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -11,7 +10,8 @@ load_dotenv()
 db = SQLAlchemy()
 migrate = Migrate()
 
-def create_app(config_name='default'):
+def create_app(config_name=None):
+    config_name = config_name or os.getenv('FLASK_ENV', 'default')
     app = Flask(__name__)
     app.config.from_object(config[config_name])
 
@@ -19,15 +19,15 @@ def create_app(config_name='default'):
     migrate.init_app(app, db)
 
     # Register route blueprints
-    from.routes.client import client_bp
-    from .routes.classes import classes_bp
-    from .routes.sessions import sessions_bp
-    from .routes.subscriptions import subscriptions_bp
-    from .routes.swagger import swagger
-    from .routes.scheduler import schedule_helper_bp
-    from .routes.main import app
+    from app.routes.client import client_bp
+    from app.routes.classes import classes_bp
+    from app.routes.sessions import sessions_bp
+    from app.routes.subscriptions import subscriptions_bp
+    from app.routes.swagger import swagger
+    from app.routes.scheduler import schedule_helper_bp
+    from app.routes.main import app as main_bp
 
-    app.register_blueprint(app)
+    app.register_blueprint(main_bp)
     app.register_blueprint(client_bp)
     app.register_blueprint(classes_bp)
     app.register_blueprint(sessions_bp)

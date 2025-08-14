@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Aprende Euskera{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/course.css') }}">
+{% endblock %}
+
+
+{% block content %}
+<section class="hero">
+  <div class="hero-text">
+    <h1 class="hero-title">
+      <span class="headline-line1">APRENDE <span class="green">EUSKERA</span></span><br>
+      <span class="green">APRENDE <span class="headline-line2">EUSKERA</span></span>
+    </h1>
+    <div class="section-block">
+      <h4><img src="{{ url_for('static', filename='img/euskera.png') }}" alt="Euskera" class="flag-icon"> EUSKERA</h4>
+      <p>Aquí puedes presentar la dinámica de las clases o que nivel tienes etc.</p>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veridian.</p>
+      <div class="hero-buttons">
+        <a href="{{ url_for('contacto') }}" class="contact-btn outlined">CONTACTO</a>
+        <span class="lang-flags"><img src="{{ url_for('static', filename='img/euskera.png') }}" alt="Euskera" class="flag-icon"> EUSKERA</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img class="tree-bg" src="{{ url_for('static', filename='img/tree7.png') }}" alt="Tree">
+    <img class="portrait" src="{{ url_for('static', filename='img/kristine.png') }}" alt="Kristiñe">
+    <div class="signature">Kris. Azpiazu</div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="card">
+    <h4><img src="{{ url_for('static', filename='img/euskera.png') }}" alt="Euskera" class="flag-icon"> EUSKERA</h4>
+    <p>Aquí puedes presentar la dinámica de las clases o que nivel tienes etc.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+  </div>
+
+  <div class="card">
+    <h4>➕ NIVEL DE EUSKERA</h4>
+    <p>Aquí indica los títulos o si es idioma natal.</p>
+    <p>Lorem ipsum dolor sit amet...</p>
+  </div>
+
+  <div class="card">
+    <h4>EXPERIENCIA</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+  </div>
+</section>
+
+<section class="content-section row">
+  <div class="left-panel">
+    <h4><img src="{{ url_for('static', filename='img/euskera.png') }}" alt="Euskera" class="flag-icon"> EUSKERA</h4>
+    <p>Aquí puedes decir los motivos por los que quieres impartir euskera. Lo podrías profundizar más en el apartado "sobre mi".</p>
+    <p>Soy un texto de relleno lorem ipsum dolor sit amet...</p>
+    <div class="signature">Kris. Azpiazu</div>
+  </div>
+
+  <div class="right-panel">
+    <div class="price-box">
+      <div class="option">CLASE VIRTUAL <span>50€</span></div>
+      <div class="option">CLASE PRESENCIAL <span>60€</span></div>
+      <p>CLASES EUSKERA | REFERENCIA</p>
+      <button class="contact-btn">CONTRATAR</button>
+    </div>
+  </div>
+</section>
+{% endblock %}

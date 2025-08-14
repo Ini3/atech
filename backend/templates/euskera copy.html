@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Kristiñe Azpiazu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        @font-face {
+            font-family: 'Bahnschrift';
+            src: url('{{ url_for('static', filename='fonts/Bahnschrift.ttf') }}');
+        }
+        @font-face {
+            font-family: 'FREESCPT';
+            src: url('{{ url_for('static', filename='fonts/FREESCPT.TTF') }}');
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+
+          <img src="{{ url_for('static', filename='img/logo_white.png') }}" alt="Logo" class="logo">
+      
+        <nav class="nav-links">
+          <a href="{{ url_for('euskera') }}" class="{% if language == 'euskera' %}active{% endif %}">APRENDE EUSKERA</a>
+          <a href="{{ url_for('espanol') }}" class="{% if language == 'espanol' %}active{% endif %}">APRENDE ESPAÑOL</a>
+          <a href="#">SOBRE MI</a>
+          <a href="#">CONTACTO</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>{{ headline1 }}<br><span>{{ headline2 }}</span></h1>
+            <!--<h1>
+                <span class="headline-line1">{{ headline1 }}</span><br>
+                <span class="headline-line2">{{ headline2 }}</span>
+            </h1>-->
+            
+            <h3>{{ content_title }}</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            <div class="hero-buttons">
+                <button class="contact-btn">CONTACTO</button>
+                <!--<span class="lang-flags">🇪🇸 ESPAÑOL &nbsp; 🇪🇺 EUSKERA</span>-->
+                <p><span class="lang-flags">{{ lang_icon }} {{ lang_name }}</span></p>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img class="tree-bg" src="{{ url_for('static', filename='img/tree7.png') }}" alt="Tree Logo">
+            <img class="portrait" src="{{ url_for('static', filename='img/kristine.png') }}" alt="Kristine Azpiazu">
+            <div class="signature">Kris. Azpiazu</div>
+        </div>        
+        
+    </section>
+</body>
+</html>
+
+
+
+

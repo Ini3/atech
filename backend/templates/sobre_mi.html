@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Sobre Mí | Kristiñe Azpiazu{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/sobre_mi.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="hero-text">
+    <h1>
+        <span class="headline-line1 green">SOBRE MI <span class="headline-line1">SOBRE MI</span><br>
+        <span class="headline-line2">SOBRE MI <span class="green">SOBRE MI</span></span>
+    </h1>
+    <div class="section-block">
+        <h4>KRISTIÑE AZPIAZU</h4>
+        <p>Puedes contar un poco de cómo es tu relación con el proyecto para
+            hacerlo funcionar o algo que lo relacione a el de forma personal o
+            ideológica.
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+            volutpat. Ut wisi enim ad minim veridian.Lorem ipsum dolor sit amet,
+            Inummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis
+        </p>
+      </div>
+  </div>
+  <div class="hero-image">
+    <img class="tree-bg" src="{{ url_for('static', filename='img/tree6.png') }}" alt="Tree Background">
+  </div>
+</section>
+
+<section class="sobre-content">
+
+  <div class="row">
+    <div class="card" data-aos="fade-up" data-aos-delay="100">
+      <h4>EXPERIENCIA</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+      <button class="contact-btn">INSTAGRAM</button>
+    </div>
+    <div class="card">
+      <h4>GUSTOS</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </div>
+  </div>
+
+  <div class="sobre-block">
+    <h4>APARTADO DE REFERENCIAS Y OPORTUNIDADES</h4>
+    <p class="highlight">Aquí podría poner algo relacionado con tu vida, reflexiones de trabajo, etc. Algo que lo relacione con el CV para que vean tus capacidades.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    <button class="contact-btn">VER MI CV</button>
+  </div>
+
+  <div class="portrait-end">
+    <img class="portrait" src="{{ url_for('static', filename='img/kristine.png') }}" alt="Kristiñe">
+    <div class="signature">Kris. Azpiazu</div>
+  </div>
+</section>
+{% endblock %}

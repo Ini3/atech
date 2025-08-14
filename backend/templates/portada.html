@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Bienvenido | Kristiñe Azpiazu{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/hero.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="hero-text">
+    <h1>
+      <span class="green">APRENDE <span  class="green">EUSKERA</span><br>
+      <span class="headline-line2">APRENDE <span  class="headline-line1">ESPAÑOL</span><br>
+    </h1>
+    <h3>MINTZAPRAKTIKA</h3>
+    <p>Aquí puedes presentar de forma dinámica el proyecto y tus objetivos con este.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+    <div class="hero-buttons">
+      <a href="{{ url_for('contacto') }}" class="contact-btn">CONTACTO</a>
+      <span class="lang-flags">🇪🇺 EUSKERA &nbsp; 🇪🇸 ESPAÑOL</span>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img class="tree-bg" src="{{ url_for('static', filename='img/tree7.png') }}" alt="Tree Background">
+    <img class="portrait" src="{{ url_for('static', filename='img/kristine.png') }}" alt="Kristiñe">
+    <div class="signature">Kris. Azpiazu</div>
+  </div>
+</section>
+{% endblock %}
